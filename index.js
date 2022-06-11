@@ -1,5 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
+import cors from 'cors';
 
 import conectarDB from './config/db.js';
 import veterinariaRoutes from './routes/veterinariaRoutes.js';
@@ -11,6 +12,21 @@ const port = process.env.PORT;
 const app = express();
 /* conectar BD */
 conectarDB();
+
+/* const dominiosPermitidos = [''];
+
+const corsOptions = {
+    origin: function(origin, callback) {
+        if(dominiosPermitidos.indexOf(origin) !== -1 ){
+            //origen permitido
+            callback(null, true);
+        } else {
+            callback(new Error('No permitido por cors'));
+        }
+    }
+} */
+
+app.use( cors() );
 
 /* Leer el body */
 app.use( express.json() );
