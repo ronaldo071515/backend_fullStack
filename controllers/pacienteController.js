@@ -9,7 +9,6 @@ const agregarPaciente = async (req, res) => {
 
         const pacienteAlmacenado = await paciente.save();
         res.json({
-            msg: 'Paciente Guardado Satisfactoriamente',
             pacienteAlmacenado
         });
         
@@ -22,9 +21,7 @@ const agregarPaciente = async (req, res) => {
 const obtenerPaciente = async (req, res) => {
 
     const pacientes = await Paciente.find().where('veterinario').equals(req.veterinario);
-
     res.json({
-        msg: 'Listado de pacientes',
         pacientes
     });
 
