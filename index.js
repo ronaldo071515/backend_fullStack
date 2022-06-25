@@ -13,7 +13,7 @@ const app = express();
 /* conectar BD */
 conectarDB();
 
-/* const dominiosPermitidos = [''];
+const dominiosPermitidos = [process.env.FRONTEND_URL];
 
 const corsOptions = {
     origin: function(origin, callback) {
@@ -24,7 +24,7 @@ const corsOptions = {
             callback(new Error('No permitido por cors'));
         }
     }
-} */
+}
 
 app.use( cors() );
 
