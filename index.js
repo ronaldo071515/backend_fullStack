@@ -26,7 +26,7 @@ const corsOptions = {
     }
 }
 
-app.use( cors() );
+app.use( cors(corsOptions) );
 
 /* Leer el body */
 app.use( express.json() );
